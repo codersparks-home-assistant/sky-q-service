@@ -23,7 +23,7 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
-      run: ./gradlew -Prelease build tag
+      run: ./gradlew -Prelease build tag publish
     - name: List build directory
       run: find ./
     - name: Push Tags
