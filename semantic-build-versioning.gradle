@@ -1,9 +1,9 @@
 startingVersion = '0.0.1'
 
 autobump {
-    patchPattern = ~/^fix\(.*\)$/
-    minorPattern = ~/^feat\(.*\)$/
-    majorPattern = ~/^major\(.*\)$/
-    newPreReleasePattern = ~/^pre\(.*\)$/
-    promoteToReleasePattern = ~/^promote\(.*\)$/
+    patchPattern = ~/^\s*fix\(.*\)$/
+    minorPattern = ~/^\s*feat\(.*\)$/
+    majorPattern = ~/^\s*major\(.*\)$/
+    newPreReleasePattern = ~/^\s*pre\(.*\)$/
+    promoteToReleasePattern = ~/^\s*promote\(.*\)$/
 }
