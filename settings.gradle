@@ -18,13 +18,3 @@ buildscript {
 }
 
 apply plugin: 'net.vivin.gradle-semantic-build-versioning'
-
-project.version.with {
-    autobump {
-        patchPattern =~ /^fix\(.*\):$/
-        minorPattern =~ /^feat\(.*\):$/
-        majorPattern =~ /^major\(.*\):$/
-        preReleasePatthen =~ /^pre\(.*\):$/
-        promoteToReleasePattern =~ /^promote\(.*\):$/
-    }
-}
