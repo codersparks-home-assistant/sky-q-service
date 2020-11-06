@@ -35,6 +35,16 @@ dependencies {
     testImplementation 'io.projectreactor:reactor-test'
 }
 
+// Trying to fix publish to github packages: https://stackoverflow.com/a/62645933
+configurations {
+    [apiElements, runtimeElements].each {
+        it.outgoing.artifacts.removeIf {
+            it.buildDependencies.getDependencies(null).contains(jar)
+        }
+        it.outgoing.artifact(bootJar)
+    }
+}
+
 test {
     useJUnitPlatform()
 }
