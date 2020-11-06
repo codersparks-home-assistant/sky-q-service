@@ -25,7 +25,10 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew build
     - name: Generate release (tag)
-      run: ./grandlew -Prelease tag
-    - name: Push Tag
-      run: git push --tags
+      run: ./gradlew -Prelease tag
+    - name: Push Tags
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        tags: true
 
