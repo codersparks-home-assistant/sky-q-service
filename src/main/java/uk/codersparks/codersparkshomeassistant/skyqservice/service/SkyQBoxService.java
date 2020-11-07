@@ -23,14 +23,14 @@ public class SkyQBoxService {
 
 
     @Cacheable("boxes")
-    public Optional<SkyQBox> getSkyQBox(String id) {
+    public Optional<SkyQBox> getSkyQBoxBlocking(String id) {
 
         logger.debug("Getting box with id: " + id);
         return this.repository.findById(id).blockOptional();
     }
 
     @CacheEvict("boxes")
-    public SkyQBox saveSkyQBox(SkyQBox box) {
+    public SkyQBox saveSkyQBoxBlocking(SkyQBox box) {
         logger.debug("Attempting to save box: " + box);
         return this.repository.save(box).block();
     }
